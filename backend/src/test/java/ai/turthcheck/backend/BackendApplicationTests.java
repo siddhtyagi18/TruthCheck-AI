@@ -1,4 +1,4 @@
-package ai.turthcheck.backend;
+package ai.truthcheck.backend;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
