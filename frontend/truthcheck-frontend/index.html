@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>TruthCheck AI</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+<div class="container">
+  <h1>TruthCheck AI</h1>
+  <p class="subtitle">Fake News & AI Media Detection</p>
+
+  <div class="cards">
+
+    <!-- NEWS -->
+    <div class="card">
+      <h2>📰 News Verification</h2>
+      <textarea id="newsInput" placeholder="Paste headline or full news here..."></textarea>
+      <button onclick="verifyNews()">Verify News</button>
+      <div id="newsResult" class="result hidden"></div>
+    </div>
+
+    <!-- MEDIA -->
+    <div class="card">
+      <h2>🎭 AI Media Detection</h2>
+      <input type="file" id="mediaInput" />
+      <button onclick="verifyMedia()">Analyze Media</button>
+
+      <div id="mediaResult" class="result hidden">
+        <h3 id="mediaVerdict"></h3>
+        <p id="mediaConfidence"></p>
+        <div class="progress">
+          <div id="mediaBar"></div>
+        </div>
+        <p id="mediaReason"></p>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>
