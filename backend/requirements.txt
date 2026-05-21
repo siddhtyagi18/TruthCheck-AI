@@ -1,0 +1,10 @@
+fastapi
+uvicorn
+torch
+transformers
+pillow
+requests
+python-dotenv
+sqlalchemy
+numpy
+timm

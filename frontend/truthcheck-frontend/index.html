@@ -2,34 +2,69 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>TruthCheck AI</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="style.css" />
 </head>
 <body>
 
 <div class="container">
-  <h1>TruthCheck AI</h1>
-  <p class="subtitle">Fake News & AI Media Detection</p>
+  <header class="header">
+    <div class="logo-section">
+      <div class="logo-icon">🛡️</div>
+      <div>
+        <h1>TruthCheck AI</h1>
+        <p class="subtitle">Fake News & AI Media Detection</p>
+      </div>
+    </div>
+  </header>
 
   <div class="cards">
 
-    <!-- NEWS -->
+    <!-- NEWS VERIFICATION -->
     <div class="card">
-      <h2>📰 News Verification</h2>
-      <textarea id="newsInput" placeholder="Paste headline or full news here..."></textarea>
-      <button onclick="verifyNews()">Verify News</button>
+      <div class="card-header">
+        <div class="card-icon">📰</div>
+        <h2>News Verification</h2>
+      </div>
+      <p class="card-description">Verify the authenticity of news articles or headlines using our AI-powered analysis</p>
+      <textarea id="newsInput" placeholder="Paste headline, news text, or article link here..."></textarea>
+      <button class="btn btn-primary" onclick="verifyNews()">
+        <span class="btn-text">Verify News</span>
+        <span class="btn-loader hidden"></span>
+      </button>
       <div id="newsResult" class="result hidden"></div>
     </div>
 
-    <!-- MEDIA -->
+    <!-- MEDIA DETECTION -->
     <div class="card">
-      <h2>🎭 AI Media Detection</h2>
-      <input type="file" id="mediaInput" />
-      <button onclick="verifyMedia()">Analyze Media</button>
+      <div class="card-header">
+        <div class="card-icon">🎭</div>
+        <h2>AI Media Detection</h2>
+      </div>
+      <p class="card-description">Detect AI-generated or AI-enhanced images and videos with advanced computer vision</p>
+      <div class="file-upload">
+        <input type="file" id="mediaInput" accept="image/*,video/*" />
+        <label for="mediaInput" class="file-label">
+          <div class="file-icon">📁</div>
+          <div class="file-text">Choose a file or drag & drop</div>
+          <div class="file-hint">Supports: JPG, PNG, MP4, WebM</div>
+        </label>
+      </div>
+      <div id="selectedFile" class="selected-file hidden"></div>
+      <button class="btn btn-primary" onclick="verifyMedia()">
+        <span class="btn-text">Analyze Media</span>
+        <span class="btn-loader hidden"></span>
+      </button>
 
       <div id="mediaResult" class="result hidden">
-        <h3 id="mediaVerdict"></h3>
-        <p id="mediaConfidence"></p>
+        <div class="media-verdict-wrapper">
+          <h3 id="mediaVerdict"></h3>
+          <p id="mediaConfidence"></p>
+        </div>
         <div class="progress">
           <div id="mediaBar"></div>
         </div>
@@ -37,6 +72,44 @@
       </div>
     </div>
 
+  </div>
+
+  <!-- HISTORY & STATS SECTION -->
+  <div class="bottom-section">
+    <div class="card stats-card">
+      <div class="card-header">
+        <div class="card-icon">📊</div>
+        <h2>Statistics</h2>
+      </div>
+      <div class="stats-grid" id="statsGrid">
+        <div class="stat-item">
+          <div class="stat-value" id="totalStats">0</div>
+          <div class="stat-label">Total Verifications</div>
+        </div>
+        <div class="stat-item">
+          <div class="stat-value" id="newsStats">0</div>
+          <div class="stat-label">News Checks</div>
+        </div>
+        <div class="stat-item">
+          <div class="stat-value" id="imageStats">0</div>
+          <div class="stat-label">Image Checks</div>
+        </div>
+        <div class="stat-item">
+          <div class="stat-value" id="videoStats">0</div>
+          <div class="stat-label">Video Checks</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="card history-card">
+      <div class="card-header">
+        <div class="card-icon">📜</div>
+        <h2>Recent History</h2>
+      </div>
+      <div id="historyList" class="history-list">
+        <p class="empty-state">No verifications yet</p>
+      </div>
+    </div>
   </div>
 </div>
 

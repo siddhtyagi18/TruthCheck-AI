@@ -1,9 +1,30 @@
-# Python
-venv/
 __pycache__/
 *.pyc
-.env
-
-# OS
+*.pyo
+*.pyd
+*.so
+*.dll
+*.exe
+*.egg-info/
+.venv/
+venv/
+ENV/
+env/
+*.db
+*.sqlite
+*.sqlite3
 .DS_Store
 Thumbs.db
+node_modules/
+*.log
+*.swp
+*.swo
+*~
+.vscode/
+.idea/
+*.zip
+*.rar
+*.tar.gz
+*.7z
+test_imports.py
+test_model.py
